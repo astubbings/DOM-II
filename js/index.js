@@ -18,9 +18,7 @@ funBusTextChange.addEventListener("mouseleave", () => {
     funBusTextChange.style.color = "black";
 })
 
-
-
-
+// prevent clicking through the link to google.com on about nav link. blocks all default events via click for all a tags in nav
 const funBusNavNoLink = document.querySelectorAll('.nav a').forEach(eachNavA => {
     eachNavA.addEventListener("click", (event) => {
         event.preventDefault();
@@ -72,3 +70,12 @@ const h2ColorOnResize = document.querySelectorAll('.home h2,h4').forEach(eachH2 
     eachH2.style.color = 'firebrick';
     })
 })
+
+const injectTextPageLoaded = document.createElement('p');
+
+document.querySelector('.footer').appendChild(injectTextPageLoaded);
+
+window.addEventListener('load', () => {
+    injectTextPageLoaded.textContent = 'page is fully loaded';
+  })
+
