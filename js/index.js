@@ -45,9 +45,16 @@ elem.addEventListener('wheel', zoom);
 const funBusNavNoLink = document.querySelectorAll('.nav a').forEach(eachNavA => {
     eachNavA.addEventListener("click", (event) => {
         event.preventDefault();
+        //event.stopPropagation();
     })
 })
 
+// when a signUp button is clicked it blocks the click from propagating or bubbling up to the body and turning the backgroundColor light red.
+const signUpNoPropagation = document.querySelectorAll('.btn').forEach(eachBtn => {
+    eachBtn.addEventListener("click", (event) => {
+        event.stopPropagation();
+    })
+})
 
 //changes colors and sizes and transitions of the nav a elements
 const funBusNavTextChange = document.querySelectorAll('.nav a').forEach(eachNavA => {
@@ -75,6 +82,7 @@ const bodyClick = document.querySelector('body');
 bodyClick.addEventListener('mousemove', () => {
     bodyClick.style.transition = 'all 2500ms';
     bodyClick.style.backgroundColor = 'lightgoldenrodyellow';
+    
 })
 bodyClick.addEventListener('click', () => {
     bodyClick.style.backgroundColor = 'mistyrose';
