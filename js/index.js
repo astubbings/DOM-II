@@ -1,6 +1,7 @@
 // Your code goes here
 const funBusTextChange =  document.querySelector('.logo-heading');
 
+// changes the the color and sizes and border of "Fun Bus" text at top
 funBusTextChange.addEventListener("mouseenter", () => {
     funBusTextChange.style.transform = 'scale(1.5)';
     funBusTextChange.style.transition = 'all 500ms';
@@ -18,6 +19,28 @@ funBusTextChange.addEventListener("mouseleave", () => {
     funBusTextChange.style.color = "black";
 })
 
+
+
+// using EventListener wheel to zoom a specific img on the page
+function zoom(event) {
+    event.preventDefault();
+  
+    scale += event.deltaY * -0.01;
+  
+    // Restrict scale
+    scale = Math.min(Math.max(.125, scale), 4);
+  
+    // Apply scale transform
+    elem.style.transform = `scale(${scale})`;
+  }
+  
+let scale = 1;
+const elem = document.querySelector('.content-destination img');
+elem.addEventListener('wheel', zoom);
+
+
+
+
 // prevent clicking through the link to google.com on about nav link. blocks all default events via click for all a tags in nav
 const funBusNavNoLink = document.querySelectorAll('.nav a').forEach(eachNavA => {
     eachNavA.addEventListener("click", (event) => {
@@ -25,6 +48,8 @@ const funBusNavNoLink = document.querySelectorAll('.nav a').forEach(eachNavA => 
     })
 })
 
+
+//changes colors and sizes and transitions of the nav a elements
 const funBusNavTextChange = document.querySelectorAll('.nav a').forEach(eachNavA => {
     eachNavA.addEventListener("mouseover", () => {
     eachNavA.style.transform = 'scale(1.2)';
