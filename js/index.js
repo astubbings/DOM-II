@@ -71,6 +71,9 @@ const h2ColorOnResize = document.querySelectorAll('.home h2,h4').forEach(eachH2 
     })
 })
 
+
+
+// 'load' event listener adds a new p in the footer with the textContent below when the page winodw has loaded
 const injectTextPageLoaded = document.createElement('p');
 
 document.querySelector('.footer').appendChild(injectTextPageLoaded);
@@ -78,4 +81,5 @@ document.querySelector('.footer').appendChild(injectTextPageLoaded);
 window.addEventListener('load', () => {
     injectTextPageLoaded.textContent = 'page is fully loaded';
   })
+
 
